@@ -1188,7 +1188,7 @@ void CCompositor::sanityCheckWorkspaces() {
     auto it = m_vWorkspaces.begin();
     while (it != m_vWorkspaces.end()) {
 
-        const auto WORKSPACERULE = g_pConfigManager->getWorkspaceRuleFor(*it);
+        const auto WORKSPACERULE = g_pConfigManager->getWorkspaceRuleFor(it->get());
         if ((*it)->m_bIndestructible || WORKSPACERULE.isPersistent) {
             ++it;
             continue;
